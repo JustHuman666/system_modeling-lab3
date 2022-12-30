@@ -30,7 +30,7 @@ def base_model(process: ProcessBase):
 def priority_model():
     print("Imitation of a base model with a priority. \n")
     process = ProcessBase(max_queue=3, name="Process 1", delay_mean=5, distribution='exponential')
-    process.priority = [1, 2]
+    process.priority = [2, 1]
     base_model(process)
 
 
@@ -57,7 +57,6 @@ def bank_model():
     element_list = [create, process_1, process_2]
     bank_system = ModelBank(element_list, balancing=[process_1, process_2])
     bank_system.simulate(1000)
-    bank_system.print_result()
 
 
 def hospital_model():
@@ -101,13 +100,12 @@ def hospital_model():
 
     hospital = ModelHospital(elements)
     hospital.simulate(1000)
-    hospital.print_result()
 
 
 if __name__ == "__main__":
     process = ProcessBase(max_queue=3, name='Process 1', delay_mean=5, distribution='exponential')
     base_model(process)
-    # probability_model()
-    # priority_model()
-    # bank_model()
-    # hospital_model()
+    probability_model()
+    priority_model()
+    bank_model()
+    hospital_model()

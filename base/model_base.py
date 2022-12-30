@@ -58,7 +58,7 @@ class ModelBase:
                     failure_probality = e.failure / e.quantity
                 mean_load = e.mean_load / self.t_curr
                 print(f"mean length of queue = {mean_length_of_queue} \nfailure probability  = {failure_probality}"
-                      f"\nmean_load = {mean_load}")
+                      f"\nmean_load = {mean_load}\n")
                 mean_length_of_queue_counter += mean_length_of_queue
                 failure_probability_counter += failure_probality
                 mean_load_counter += mean_load

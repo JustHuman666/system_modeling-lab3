@@ -73,12 +73,12 @@ class ModelBank(ModelBase):
         processors_amount = 0
 
         for e in self.list:
-            e.print_info()
             if isinstance(e, ProcessBank):
                 processors_amount += 1
                 mean_departure_time = e.t_departure / e.quantity
-                print(f"mean depature timde = {mean_departure_time}")
+                print(f"mean depature time to {e.name} = {mean_departure_time}\n")
                 departure_mean_time_counter += mean_departure_time
+                time_in_system_counter += e.t_departure / e.quantity
 
         departure_mean_time_average = departure_mean_time_counter / processors_amount
         time_in_system_average = time_in_system_counter / processors_amount

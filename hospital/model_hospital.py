@@ -55,7 +55,7 @@ class ModelHospital(ModelBase):
                     time_finished_type_2 = float('inf')
                     if e.amount_of_type_2 != 0:
                         time_finished_type_2_extra = e.time_of_finishing_type_2 / e.amount_of_type_2
-                    print(f"mean time of finishing for clients of type 2: {time_finished_type_2_extra}")
+                    print(f"mean time of finishing for clients of type 2: {time_finished_type_2_extra}\n")
 
             elif isinstance(e, DisposeHospital):
                 time_of_finishing_counter += e.time_finished_1 + e.time_finished_2 + e.time_finished_3

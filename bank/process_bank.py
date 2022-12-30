@@ -28,9 +28,9 @@ class ProcessBank(ElementBase):
                 self.failure += 1
 
     def out_act(self):
-        super().out_act()
         channels = self.get_current_channel()
         for channel in channels:
+            super().out_act()
             self.t_next[channel] = float('inf')
             self.state[channel] = 0
 
